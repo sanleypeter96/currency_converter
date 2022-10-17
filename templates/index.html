@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Setting the pages character encoding -->
+	<meta charset="UTF-8">
+
+	<!-- The meta viewport will scale my content to any device width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	 <!-- Link to my stylesheet -->
+	 <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<title>Start up</title>
+</head>
+<body>
+   <h1>Transaction Details</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Source_Currency</th>
+				<th>Destination_Currency</th>
+				<th>Source_Amount</th>
+				<th>Rate</th>
+				<th>Converted_Amount</th>
+			</tr>
+		</thead>
+		<tbody >
+			{% for row in rows %}
+            <tr>
+               <td>{{row["Source_Currency"]}}</td>
+               <td>{{row["Destination_Currency"]}}</td>
+               <td>{{ row["Source_Amount"]}}</td>
+               <td>{{row['Rate']}}</td>	
+			   <td>{{row['Converted_Amount']}}</td>
+            </tr>
+         {% endfor %}
+		</tbody>
+	</table>
+
+	<script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- Link to the javascript file -->
+</body>
+</html>

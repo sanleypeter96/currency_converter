@@ -1,0 +1,5 @@
+Source Currency,Destination Currency,Source Amount
+EUR,USD,50
+GBP,USD,1000
+EUR,GBP,300
+EUR,AUD,2500

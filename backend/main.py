@@ -15,12 +15,16 @@ def post_work():
     print(db_df)
     con.close()
 
-if __name__ == '__main__':
-    # create a process pool with the default number of worker processes
+
+def main():
     executor = ProcessPoolExecutor(max_workers=4)
     for result in executor.map(read_file, file_paths):
 	    print("Success!")
     post_work()
+if __name__ == '__main__':
+    main()
+    # create a process pool with the default number of worker processes
+    
 
     # p1 = Process(target=read_file, args=('/Users/sanleypeter/Desktop/TransferMate/data/csv',))
     # p2 = Process(target=read_file, args=('/Users/sanleypeter/Desktop/TransferMate/data/csv2',))
